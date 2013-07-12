@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css Game</title>
+	<link rel="stylesheet" href="stylesheets/screen.css">
+</head>
+<body>
+	
+<div class="grid-container">
+	<h1>Css Game</h1>
+	
+<!-- -->
+	<div id="GameViewPort">
+		
+		<div class="moveable-space"></div>
+		<div id="you">
+			<ul id="weapon1">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<!-- The containers for the level - 
+		these move across the screen, and more parts of the level get loaded into them  -->
+		<ul class="stage stage1"></ul>
+		<ul class="stage stage2"></ul>
+		<ul class="stage stage3"></ul>
+		<ul class="stage background"></ul>
+		
+		
+		<!-- The -->
+		<ul class="scenes stage1-scenes">
+			<li class="scene scene1">
+				<div class="enemy normal-character"></div>
+			</li>
+			<li class="scene scene2"></li>
+			<li class="scene scene3"></li>
+			<li class="scene scene4"></li>
+			<li class="scene scene5"></li>
+		</ul>
+		
+		<ul class="scenes stage2-scenes">
+			<li class="scene scene1">
+				<div class="enemy normal-character"></div>
+			</li>
+			<li class="scene scene2"></li>
+			<li class="scene scene3"></li>
+			<li class="scene scene4"></li>
+			<li class="scene scene5"></li>
+		</ul>
+		
+		<ul class="scenes stage3-scenes">
+			<li class="scene scene1"></li>
+			<li class="scene scene2"></li>
+			<li class="scene scene3">
+				<div class="enemy normal-character"></div>
+			</li>
+			<li class="scene scene4"></li>
+			<li class="scene scene5"></li>
+		</ul>
+	
+	</div>
+
+<!-- -->
+	<div id="GameControls">
+	
+<pre>div#you {
+  background-color: #00f;
+  border: 1px solid #000;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 180px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}</pre><pre>div#you {
+  ul#weapon1 {
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 0px;
+    width: 100px;
+  }
+  
+  #weapon1 li {
+    background-color: #f00;
+    border: 1px solid #000;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+  }
+}
+</pre>
+	
+	</div>
+</div>
+	
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="js/client.js"></script>
+</html>

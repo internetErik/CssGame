@@ -1,0 +1,151 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass";
+@import "susy";
+
+@mixin font-size($sizeValue: 1) {
+  font-size: ($sizeValue * 10) + px; 
+  font-size: $sizeValue + rem;
+  line-height: ($sizeValue * 10) + ($sizeValue * 16)/2 + px;
+  line-height: $sizeValue + ($sizeValue + .6)/2 + rem;
+}
+
+$base-font-size: 10px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+$total-columns: 12;
+$column-width: 70px;
+$gutter-width: 10px;
+$grid-padding: 10px;
+
+$playerzndx: 1000;
+$level1zndx: 999;
+$level2zndx: 998;
+$level3zndx: 997;
+$backgroundzndx: 996;
+$propzndx: 1001;
+
+
+* { @include box-sizing(border-box); }
+h1 { @include font-size(3); }
+body { @include font-size(1.6); background-color: #000;}
+
+.grid-container {
+	@include container;
+}
+
+#GameViewPort {
+	background-color: #eee;
+	height: 400px;
+	width: 768px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	
+	#you {
+		
+		background-color: #00f;
+		border: 1px solid #000;
+		display: inline-block;
+		left: 20px;
+		top: 180px;
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		z-index: $playerzndx;
+
+	}
+
+	#weapon1 {
+		margin-left: 40px;
+		margin-top: 0px;
+		width: 100px;
+		position: absolute;
+		top: 25px;
+	}
+
+	#weapon1 li {
+		
+		background-color: #f0f;
+		border: 1px solid #000;
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+
+	}
+	
+	.moveable-space {
+		position: absolute;
+		height: 400px;
+		width: 200px;
+		background-color: #fcc;
+	}
+}
+
+.stage {
+	height: 400px;
+	width: 1000px;
+	position: absolute;
+}
+.stage1 { z-index: $level1zndx; }
+.stage2 { z-index: $level2zndx; }
+.stage3 { z-index: $level3zndx; }
+.background { z-index: $backgroundzndx; }
+
+	.scenes { display: none; }
+	.scene {
+		display: inline-block;
+		height: 400px;
+		width: 1000px;
+		position: relative;
+	}
+
+		.normal-character {
+			height: 20px;
+			width: 20px;
+			position: absolute;
+			z-index: $propzndx;
+		}
+
+		.large-character {
+			height: 40px;
+			width: 40px;
+			position: absolute;
+			z-index: $propzndx;
+			
+		}
+
+		.enemy {
+			background-color: #f00;
+			top: 255px;
+			left: 500px;
+		}
+
+		.powerup {
+			background-color: #ff0;
+			z-index: $propzndx;
+			
+			&.normal-character { border-radius: 20px; }
+			&.large-character { border-radius: 20px; }
+		}
+		
+/******************************************************
+*/
+#GameControls {
+	width: 768px;
+	margin: 0 auto;
+	
+	pre { 
+		display: inline-block;
+		width: 300px; 
+		margin: 10px;
+		background-color: #ccc;
+		vertical-align: top;
+		padding: 5px;
+	}
+}
